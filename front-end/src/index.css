@@ -9,35 +9,65 @@ h1 {
 
 .users {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
 }
 
-.box {
-  width: 315px;
+.mainBox {
+  border: 1px solid rgb(170, 100, 0);
   border-radius: 20px;
-  border: 1px solid rgb(0, 0, 0);
-  padding: 15px;
-  margin: 10px;
+}
+
+.usersHeading {
+  display: flex;
+  flex-direction: "column";
+  /* border: 1px solid rgb(0, 0, 0); */
+  background-color: #dcdcdc;
+  border-radius: 20px;
 }
 .indBox {
-  position: relative;
-  width: 303px;
+  display: flex;
+  flex-direction: "column";
   border: 1px solid rgb(0, 0, 0);
-  padding: 20px;
-  right: 15px;
+}
+.personName {
+  flex: 2;
+}
+.edit {
+  margin: 10px;
+  flex: 0.5;
+  /* background-color: aqua; */
+  border-radius: 5px;
+}
+.delete {
+  margin: 10px;
+  flex: 0.5;
+  background-color: red;
+  border-radius: 5px;
 }
 .indButton {
-  left: 200px;
+  margin: 10px;
+  flex: 0.5;
+  /* left: 200px; */
+  color: rgb(97, 157, 138);
+  background-color: aqua;
+  border-radius: 5px;
+}
+.indButton {
+  margin: 10px;
+  flex: 0.5;
+  /* left: 200px; */
   color: rgb(97, 157, 138);
   background-color: aqua;
   border-radius: 5px;
 }
 .col {
   display: flex;
-  columns: 100px 3;
+  columns: 100px;
 }
 .create {
-  position: absolute;
-  left: 200px;
-  margin-top: 350px;
+  /* position: absolute; */
+  /* left: 200px; */
+  /* margin-top: 350px; */
+  width: 10%;
 }

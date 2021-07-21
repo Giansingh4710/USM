@@ -21,6 +21,8 @@ app.get("/gian", (request, response) => {
 });
 
 app.get("/test", (request, response) => {
+  console.log("you just made an API request!");
+  // response.json(db);
   setTimeout(() => {
     response.json(db);
   }, 1500);

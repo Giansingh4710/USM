@@ -7,7 +7,7 @@ const MyApp = () => {
 
   async function api() {
     //let url = "https://www.boredapi.com/api/activity";
-    let url = "http://localhost:8080/test";
+    // let url = "http://localhost:8080/test";
     await fetch("/test")
       .then((res) => res.json())
       .then((res) => {
@@ -24,7 +24,7 @@ const MyApp = () => {
     if (apiData === "ERROR") {
       return (
         <div className="users">
-          Something went WRONG!
+          <h1>Something went WRONG!</h1>
           <div className="col">
             <button
               className="indButton"
@@ -41,21 +41,32 @@ const MyApp = () => {
       api();
       return <div className="users">LOADING...</div>;
     } else {
-      const lst = apiData.users.map((obj) => {
-        return (
-          <div className="indBox">
-            {obj.firstName + ", " + obj.lastName}
-            <button className="indButton">edit</button>
-            <button className="indButton">delete</button>
+      const lst = (
+        <div className="mainBox">
+          <div className="usersHeading">
+            <h1>USERS</h1>
           </div>
-        );
-      });
+          {apiData.users.map((obj) => {
+            return (
+              <div className="indBox">
+                <h1 className="personName">
+                  {obj.firstName + " " + obj.lastName}
+                </h1>
+                <button className="edit">
+                  <h2>edit</h2>
+                </button>
+                <button className="delete">
+                  <h2 style={{ color: "white" }}>delete</h2>
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      );
       return (
         <div className="users">
-          <div className="box">
-            USERS
-            {lst}
-          </div>
+          {/* <div className="mainBox"> */}
+          {lst}
           <button className="create">CREATE</button>
         </div>
       );
